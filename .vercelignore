@@ -1,0 +1,7 @@
+.angular
+.vscode
+node_modules
+dist
+test-tailwind.css
+test.css
+*.spec.ts
