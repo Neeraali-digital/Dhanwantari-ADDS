@@ -1,0 +1,37 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-yellow: #FDC010;
+    --brand-blue: #3F4494;
+    --brand-dark: #1a1a1a;
+  }
+
+  html, body { 
+    height: 100%; 
+    margin: 0; 
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fafafa;
+  }
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #3F4494;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FDC010;
+}

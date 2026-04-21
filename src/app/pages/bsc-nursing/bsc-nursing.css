@@ -1,0 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:host {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Custom underline animation for branding */
+.underline-brand {
+  position: relative;
+}
+
+.underline-brand::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: #FDC010;
+  bottom: 4px;
+  left: 0;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #3F4494 0%, #2D3172 100%);
+}

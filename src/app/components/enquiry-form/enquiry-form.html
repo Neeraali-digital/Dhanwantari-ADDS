@@ -1,0 +1,67 @@
+<div class="bg-white p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-100">
+  <div *ngIf="!submitted">
+    <h3 class="text-2xl font-bold text-brand-blue mb-2">Enquire Now</h3>
+    <p class="text-gray-500 mb-6 font-medium">Get a call back from our admission experts.</p>
+
+    <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="name" placeholder="John Doe">
+        <mat-error *ngIf="enquiryForm.get('name')?.errors?.['required']">Name is required</mat-error>
+      </mat-form-field>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phone" placeholder="9876543210">
+          <mat-error *ngIf="enquiryForm.get('phone')?.errors?.['pattern']">Enter a valid 10-digit number</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" placeholder="john@example.com">
+          <mat-error *ngIf="enquiryForm.get('email')?.errors?.['email']">Enter a valid email</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Select Course</mat-label>
+        <mat-select formControlName="course">
+          <mat-option value="B.Sc Nursing">B.Sc Nursing</mat-option>
+          <mat-option value="General Nursing (GNM)">General Nursing (GNM)</mat-option>
+          <mat-option value="Post Basic Nursing">Post Basic Nursing</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Message (Optional)</mat-label>
+        <textarea matInput formControlName="message" rows="3"></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" 
+              class="w-full py-6 text-lg font-bold rounded-xl transition-all brand-button shadow-indigo-200"
+              [disabled]="enquiryForm.invalid || loading">
+        <span *ngIf="!loading">Send Message</span>
+        <span *ngIf="loading" class="flex items-center">
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Processing...
+        </span>
+      </button>
+    </form>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="submitted" class="text-center py-10">
+    <div class="bg-green-100 text-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h3 class="text-3xl font-bold text-gray-800 mb-2">Thank You!</h3>
+    <p class="text-gray-500 mb-8">Your enquiry has been received. Our team will contact you shortly.</p>
+    <button (click)="resetForm()" class="text-brand-blue font-bold hover:underline">Send another enquiry</button>
+  </div>
+</div>
