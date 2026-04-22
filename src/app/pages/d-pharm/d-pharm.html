@@ -1,0 +1,257 @@
+<app-header></app-header>
+
+<main class="overflow-hidden bg-white font-sans selection:bg-brand-yellow selection:text-brand-dark">
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
+    <!-- Abstract Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[#f8f9ff]"></div>
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-brand-blue/5 rounded-l-[100px] skew-x-[-10deg] translate-x-1/4"></div>
+      <!-- Decorative circles -->
+      <div class="absolute top-1/4 left-10 w-64 h-64 bg-brand-yellow/10 blur-3xl rounded-full animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-20 w-96 h-96 bg-brand-blue/5 blur-3xl rounded-full animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        <!-- Hero Content -->
+        <div class="lg:w-3/5 text-center lg:text-left py-3">
+          <div class="inline-flex items-center space-x-3 bg-white border border-gray-100 shadow-sm px-5 py-2 rounded-full mb-8 animate-fade">
+            <span class="flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-brand-yellow opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-yellow"></span>
+            </span>
+            <span class="text-[10px] font-black tracking-widest text-brand-dark uppercase">Diploma Admission Open 2026-27</span>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-8xl font-black text-brand-dark mb-6 leading-[1.05] animate-fade">
+            Fast-Track Your <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-600">Pharma Career</span>
+          </h1>
+
+          <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium animate-fade" style="animation-delay: 0.1s">
+            Diploma in Pharmacy (D.Pharm) is the perfect gateway to becoming a registered pharmacist. Get world-class training at Dhanwantari in just 2 years.
+          </p>
+
+          <div class="flex flex-wrap justify-center lg:justify-start gap-10 mb-12 animate-fade" style="animation-delay: 0.2s">
+            <div class="flex flex-col">
+              <span class="text-4xl font-black text-brand-blue">2 Years</span>
+              <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Course Duration</span>
+            </div>
+            <div class="w-px h-12 bg-gray-200 hidden sm:block"></div>
+            <div class="flex flex-col">
+              <span class="text-4xl font-black text-brand-blue">PCI</span>
+              <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Approved</span>
+            </div>
+            <div class="w-px h-12 bg-gray-200 hidden sm:block"></div>
+            <div class="flex flex-col">
+              <span class="text-4xl font-black text-brand-blue">100%</span>
+              <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Retail Placements</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 animate-fade" style="animation-delay: 0.3s">
+            <a href="#enquire" class="bg-brand-dark text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-black transition-all shadow-xl shadow-gray-200 hover:-translate-y-1">
+              Apply Now
+            </a>
+            <a href="#about" class="bg-white border-2 border-gray-100 text-brand-dark px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Enquiry Form -->
+        <div id="enquire" class="lg:w-2/5 w-full max-w-lg animate-fade" style="animation-delay: 0.4s">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-brand-blue/5 blur-2xl rounded-[40px]"></div>
+            <app-enquiry-form [preSelectedCourse]="'D.Pharm'"></app-enquiry-form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility Bar -->
+  <section class="py-16 bg-white border-y border-gray-50">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-xs font-black text-gray-300 uppercase tracking-[0.3em] mb-12">Affiliated & Recognized Institutional Partners</p>
+      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity duration-500">
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-black text-brand-dark">RGUHS</span>
+          <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Affiliated</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-black text-brand-dark">PCI</span>
+          <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Approved</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-black text-brand-dark">GOVT-KA</span>
+          <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Recognised</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-20">
+        <div class="lg:w-1/2 relative">
+          <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl skew-y-1">
+            <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=1000&auto=format&fit=crop" alt="D.Pharm Lab" class="w-full h-auto">
+          </div>
+          <div class="absolute -bottom-10 -right-10 bg-brand-blue p-8 rounded-[30px] shadow-2xl z-20 text-white">
+            <p class="text-4xl font-black mb-1">02</p>
+            <p class="text-xs font-bold uppercase tracking-widest">Year Fast-Track</p>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2">
+          <span class="text-brand-blue font-black text-sm uppercase tracking-widest mb-6 block">Foundation in Medicine</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-dark mb-8 leading-tight">
+            Comprehensive <span class="underline-brand">Diploma</span> in Pharmacy.
+          </h2>
+          <p class="text-lg text-gray-500 mb-10 leading-relaxed font-medium">
+            Our D.Pharm program is designed to provide you with the essential knowledge of drug composition, usage, and dispensing. It's the first step toward becoming a healthcare professional.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-brand-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-yellow">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <p class="text-sm font-bold text-gray-700">Practical Dispensing Training</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-brand-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-yellow">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <p class="text-sm font-bold text-gray-700">Community Pharmacy Focus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fee Structure - Correct Data -->
+  <section class="py-24 bg-[#fafafa]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black text-brand-dark mb-4">Affordable Excellence</h2>
+          <p class="text-gray-500 font-medium">Clear and transparent fee structure for D.Pharm 2026-27.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+          <div class="bg-white p-10 rounded-[40px] shadow-lg border border-gray-50">
+            <div class="space-y-6">
+              <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                <span class="font-bold text-gray-400 uppercase text-xs">Year 01</span>
+                <span class="font-black text-brand-blue text-xl">₹ 1,10,000/-</span>
+              </div>
+              <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                <span class="font-bold text-gray-400 uppercase text-xs">Year 02</span>
+                <span class="font-black text-brand-blue text-xl">₹ 50,000/-</span>
+              </div>
+              <div class="mt-10 pt-6">
+                <p class="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-2">Total Project Investment</p>
+                <p class="text-4xl font-black text-brand-dark">₹ 1,60,000/-</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-brand-blue p-10 rounded-[40px] shadow-2xl text-white flex flex-col justify-center relative overflow-hidden">
+             <!-- Background pulse -->
+             <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+             
+             <h3 class="text-2xl font-black mb-6">Course Framework</h3>
+             <ul class="space-y-4">
+               <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-brand-yellow rounded-full"></span> 10+2 / PUC Completed</li>
+               <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-brand-yellow rounded-full"></span> Physics, Chemistry & Bio/Math</li>
+               <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-brand-yellow rounded-full"></span> Minimum 45% Aggregate</li>
+               <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-brand-yellow rounded-full"></span> No Age limit</li>
+             </ul>
+             <div class="mt-8 p-4 bg-white/10 rounded-2xl border border-white/10">
+               <p class="text-xs text-blue-100 font-medium">D.Pharm graduates are eligible for lateral entry into 2nd Year B.Pharm.</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Scope -->
+  <section class="py-32 bg-white">
+     <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-brand-dark mb-20 leading-tight">Where D.Pharm <br /><span class="text-brand-blue">Takes You.</span></h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+           <div class="p-8 rounded-[30px] bg-[#f8f9ff] border border-gray-50 card-hover">
+              <h5 class="font-black text-brand-blue text-sm mb-2">Pharmacist</h5>
+              <p class="text-xs text-gray-400 font-bold uppercase">Government Jobs</p>
+           </div>
+           <div class="p-8 rounded-[30px] bg-[#fffcf5] border border-gray-50 card-hover">
+              <h5 class="font-black text-brand-yellow text-sm mb-2">Retail Biz</h5>
+              <p class="text-xs text-gray-400 font-bold uppercase">Entrepreneurship</p>
+           </div>
+           <div class="p-8 rounded-[30px] bg-[#f8f9ff] border border-gray-50 card-hover">
+              <h5 class="font-black text-brand-blue text-sm mb-2">Production</h5>
+              <p class="text-xs text-gray-400 font-bold uppercase">Pharmaceutical Industry</p>
+           </div>
+           <div class="p-8 rounded-[30px] bg-[#fafafa] border border-gray-50 card-hover">
+              <h5 class="font-black text-gray-700 text-sm mb-2">B.Pharm</h5>
+              <p class="text-xs text-gray-400 font-bold uppercase">Higher Education</p>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- Infrastructure -->
+  <section class="py-32 bg-brand-dark text-white rounded-[60px] mx-4 md:mx-10 mb-10 overflow-hidden relative">
+    <div class="container mx-auto px-4 relative z-10 text-center lg:text-left">
+       <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="lg:w-1/2">
+             <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">World-Class <br /> Infrastructure.</h2>
+             <p class="text-gray-400 text-lg mb-10 font-medium">Located just steps from Chikkabanavara Railway Station, our campus provides immediate access to state-of-the-art facilities.</p>
+             <div class="grid grid-cols-2 gap-8">
+                <div class="flex items-center gap-4">
+                   <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-yellow">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                   </div>
+                   <span class="text-xs font-bold uppercase tracking-widest">200 Bed Hospital</span>
+                </div>
+                <div class="flex items-center gap-4">
+                   <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-yellow">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                   </div>
+                   <span class="text-xs font-bold uppercase tracking-widest">Safe Hostels</span>
+                </div>
+             </div>
+          </div>
+          <div class="lg:w-1/2">
+             <div class="border-8 border-white/5 rounded-[40px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" class="w-full h-auto grayscale-[40%] hover:grayscale-0 transition-all duration-700" alt="Campus">
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 text-center px-4">
+     <div class="container mx-auto">
+        <h2 class="text-4xl md:text-6xl font-black text-brand-dark mb-10">Gateway to <br /><span class="text-brand-blue">Professional Pharmacy.</span></h2>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+           <a href="#enquire" class="bg-brand-yellow text-brand-dark px-14 py-6 rounded-3xl font-black text-xl hover:shadow-2xl transition-all hover:-translate-y-1 w-full sm:w-auto">Enquire Now</a>
+           <a href="tel:+919740550557" class="text-brand-blue font-bold text-xl hover:underline">+91 97405 50557</a>
+        </div>
+     </div>
+  </section>
+
+</main>
+
+<app-footer></app-footer>

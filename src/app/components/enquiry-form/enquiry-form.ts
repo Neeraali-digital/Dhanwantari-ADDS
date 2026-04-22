@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,7 +20,9 @@ import { MatSelectModule } from '@angular/material/select';
   templateUrl: './enquiry-form.html',
   styleUrl: './enquiry-form.css'
 })
-export class EnquiryFormComponent {
+export class EnquiryFormComponent implements OnInit {
+  @Input() preSelectedCourse: string = 'B.Sc Nursing';
+  
   enquiryForm: FormGroup;
   loading = false;
   submitted = false;
@@ -30,9 +32,13 @@ export class EnquiryFormComponent {
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      course: ['B.Sc Nursing', Validators.required],
+      course: ['', Validators.required],
       message: ['']
     });
+  }
+
+  ngOnInit() {
+    this.enquiryForm.patchValue({ course: this.preSelectedCourse });
   }
 
   onSubmit() {
@@ -42,7 +48,7 @@ export class EnquiryFormComponent {
       setTimeout(() => {
         this.loading = false;
         this.submitted = true;
-        this.enquiryForm.reset({ course: 'B.Sc Nursing' });
+        this.enquiryForm.reset({ course: this.preSelectedCourse });
       }, 2000);
     }
   }
