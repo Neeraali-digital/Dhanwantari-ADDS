@@ -2,7 +2,7 @@
 
 <main class="overflow-hidden bg-[#fafafa] font-sans">
   <!-- Hero Section -->
-  <section class="relative bg-brand-dark overflow-hidden min-h-[90vh] flex items-center">
+  <section class="relative bg-brand-dark overflow-hidden min-h-[90vh] flex items-center lg:px-20">
     <div class="absolute inset-0 z-0">
       <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80&w=2000" alt="Nursing Students" class="w-full h-full object-cover opacity-30 object-top">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/20 to-transparent"></div>
@@ -136,6 +136,26 @@
             Download Prospectus
           </button>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Campus Tour Video Section -->
+  <section class="py-24 bg-white" appReveal="reveal-up">
+    <div class="container mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-brand-dark mb-6">Experience <span class="text-brand-blue">Dhanwantari</span></h2>
+        <p class="text-gray-500 text-lg">Take a virtual tour of our state-of-the-art campus and clinical facilities.</p>
+      </div>
+      <div class="relative max-w-5xl mx-auto aspect-video rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+        <iframe class="absolute inset-0 w-full h-full" 
+                src="https://www.youtube.com/embed/vE2v3dsCWJs" 
+                title="Dhanwantari Campus Tour" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
@@ -371,8 +391,16 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.2343455113!2d77.502941!3d13.084128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d84b260840b%3A0x63346d99435b7194!2sDhanwantari%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1713690000000!5m2!1sen!2sin" 
             class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white px-8 py-6 rounded-2xl shadow-2xl flex items-center gap-4 min-w-[320px]">
-        <h4 class="text-brand-dark font-bold text-lg">Dhanwantari Campus</h4>
-        <p class="text-gray-500 text-sm">Chikkabanavara, Bangalore</p>
+        <div class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-brand-dark font-bold text-lg leading-tight">Dhanwantari Campus</h4>
+          <p class="text-gray-500 text-sm">Chikkabanavara, Bangalore</p>
+        </div>
     </div>
   </section>
 </main>
