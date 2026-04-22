@@ -1,4 +1,5 @@
-import { Directive, ElementRef, OnInit, Renderer2, Input } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, Input, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appReveal]',
@@ -8,7 +9,11 @@ export class RevealDirective implements OnInit {
   @Input('appReveal') revealType: string = 'reveal-up';
   @Input() revealDelay: string = '';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef, 
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
     // Add base reveal class
@@ -26,19 +31,20 @@ export class RevealDirective implements OnInit {
       this.renderer.addClass(this.el.nativeElement, this.revealDelay);
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(this.el.nativeElement, 'revealed');
-          // Once animated, we can stop observing
-          observer.unobserve(this.el.nativeElement);
-        }
+    if (isPlatformBrowser(this.platformId)) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(this.el.nativeElement, 'revealed');
+            observer.unobserve(this.el.nativeElement);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before element enters viewport
-    });
 
-    observer.observe(this.el.nativeElement);
+      observer.observe(this.el.nativeElement);
+    }
   }
 }
