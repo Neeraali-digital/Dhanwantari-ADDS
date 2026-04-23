@@ -73,15 +73,170 @@
   animation: fade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* Pulse Glow Animation */
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(63, 68, 148, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(63, 68, 148, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(63, 68, 148, 0); }
+
+/* Premium Enquire Button System - Advanced */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 3rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  isolation: isolate;
+  cursor: pointer;
+  z-index: 1;
+  text-decoration: none;
+  outline: none;
+  background-size: 200% auto;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite;
+@media (max-width: 768px) {
+  .btn-premium {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+.btn-premium-yellow {
+  background-color: var(--brand-yellow);
+  background-image: linear-gradient(45deg, #FDC010 0%, #ffdb70 50%, #FDC010 100%);
+  color: var(--brand-blue);
+  box-shadow: 0 10px 25px -5px rgba(253, 192, 16, 0.4);
+}
+
+.btn-premium-blue {
+  background-color: var(--brand-blue);
+  background-image: linear-gradient(45deg, #3F4494 0%, #5a60cc 50%, #3F4494 100%);
+  color: white;
+  box-shadow: 0 10px 25px -5px rgba(63, 68, 148, 0.4);
+}
+
+.btn-premium-dark {
+  background-color: var(--brand-dark);
+  background-image: linear-gradient(45deg, #1a1a1a 0%, #333333 50%, #1a1a1a 100%);
+  color: white;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Advanced Glow Trail */
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 320deg,
+    rgba(255, 255, 255, 0.5) 340deg,
+    transparent 360deg
+  );
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.btn-premium:hover::before {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* Liquid Fill & Background Slide */
+.btn-premium:hover {
+  transform: translateY(-5px) scale(1.03);
+  background-position: right center;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-premium-yellow:hover {
+  box-shadow: 0 20px 40px -10px rgba(253, 192, 16, 0.6);
+}
+
+.btn-premium-blue:hover {
+  box-shadow: 0 20px 40px -10px rgba(63, 68, 148, 0.6);
+}
+
+.btn-premium:hover {
+  transform: translateY(-5px) scale(1.02);
+  letter-spacing: 0.5px;
+}
+
+.btn-premium-yellow:hover {
+  box-shadow: 0 20px 40px -10px rgba(253, 192, 16, 0.6);
+  background-color: #ffca2c;
+}
+
+.btn-premium-blue:hover {
+  box-shadow: 0 20px 40px -10px rgba(63, 68, 148, 0.6);
+}
+
+.btn-premium-dark:hover {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Arrow Animation */
+.btn-premium .btn-arrow {
+  display: inline-flex;
+  margin-left: 0;
+  width: 0;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateX(-10px);
+}
+
+.btn-premium:hover .btn-arrow {
+  width: 20px;
+  opacity: 1;
+  margin-left: 10px;
+  transform: translateX(0);
+}
+
+/* Advanced Multi-layer Pulse */
+@keyframes pulse-advanced {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(253, 192, 16, 0.5), 0 0 0 0 rgba(253, 192, 16, 0.2); 
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 20px rgba(253, 192, 16, 0), 0 0 30px 10px rgba(253, 192, 16, 0.1); 
+    transform: scale(1.02);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(253, 192, 16, 0), 0 0 0 0 rgba(253, 192, 16, 0); 
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-advanced-blue {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(63, 68, 148, 0.5), 0 0 0 0 rgba(63, 68, 148, 0.2); 
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 20px rgba(63, 68, 148, 0), 0 0 30px 10px rgba(63, 68, 148, 0.1); 
+    transform: scale(1.02);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(63, 68, 148, 0), 0 0 0 0 rgba(63, 68, 148, 0); 
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-premium {
+  animation: pulse-advanced 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.btn-premium-blue.animate-pulse-premium {
+  animation-name: pulse-advanced-blue;
 }
 
 @keyframes float {

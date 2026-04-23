@@ -2,7 +2,7 @@
   <div class="container mx-auto py-3 flex justify-between items-center">
     <!-- Logo Section -->
     <a  class="flex items-center space-x-3">
-      <img src="/logo.png" alt="Dhanwantari Logo" class="h-12 md:h-16 w-auto object-contain">
+      <img src="/logo.png" alt="Dhanwantari Logo" class="h-14 md:h-20 w-auto object-contain">
       <div class="hidden md:block">
         <h1 class="text-brand-blue font-bold text-lg md:text-xl leading-tight">DHANWANTARI</h1>
         <p class="text-gray-500 text-[10px] md:text-xs font-medium uppercase tracking-widest leading-tight">Group of Institutions</p>
@@ -30,19 +30,21 @@
         </div>
         <div>
           <p class="text-gray-400 font-normal">Email Us</p>
-          <a href="mailto:judithwellcare@gmail.com" class="text-brand-blue font-bold">judithwellcare@gmail.com</a>
+          <a href="mailto:admissionsdhanwantari@gmail.com" class="text-brand-blue font-bold">admissionsdhanwantari@gmail.com</a>
         </div>
       </div>
     </div>
 
     <!-- Mobile Button -->
-    <button class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-semibold md:px-8 hover:bg-brand-blue/90 transition-all shadow-lg hover:shadow-brand-blue/30 lg:hidden">
-      Enquire Now
-    </button>
+    <a href="#enquire" class="btn-premium btn-premium-blue animate-pulse-premium lg:hidden">
+      <span>Enquire Now</span>
+      <svg class="btn-arrow w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </a>
     
-    <!-- Desktop Button -->
-    <button class="bg-brand-yellow text-brand-blue px-8 py-3 rounded-full font-bold hover:bg-brand-yellow/90 transition-all shadow-lg hover:shadow-brand-yellow/30 hidden lg:block">
-      ADMISSION OPEN 2026-27
-    </button>
+    <!-- Desktop Button (Hidden on Mobile) -->
+    <a href="#enquire" class="btn-premium btn-premium-yellow animate-pulse-premium !hidden lg:!flex">
+      <span>ADMISSION OPEN 2026-27</span>
+      <svg class="btn-arrow w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </a>
   </div>
 </header>

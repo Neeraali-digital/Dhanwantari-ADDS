@@ -41,15 +41,41 @@ export class EnquiryFormComponent implements OnInit {
     this.enquiryForm.patchValue({ course: this.preSelectedCourse });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.enquiryForm.valid) {
       this.loading = true;
-      // Simulate API call
-      setTimeout(() => {
+      
+      const formData = {
+        ...this.enquiryForm.value,
+        _cc: 'admissionsdhanwantari@gmail.com',
+        _subject: `New Enquiry: ${this.enquiryForm.value.name} - ${this.enquiryForm.value.course}`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/judithwellcare@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          this.submitted = true;
+          this.enquiryForm.reset({ course: this.preSelectedCourse });
+        } else {
+          console.error('Form submission failed');
+          alert('Something went wrong. Please try again or call us directly.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Connection error. Please check your internet and try again.');
+      } finally {
         this.loading = false;
-        this.submitted = true;
-        this.enquiryForm.reset({ course: this.preSelectedCourse });
-      }, 2000);
+      }
     }
   }
 
