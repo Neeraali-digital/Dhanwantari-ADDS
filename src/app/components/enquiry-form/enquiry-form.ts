@@ -47,14 +47,14 @@ export class EnquiryFormComponent implements OnInit {
       
       const formData = {
         ...this.enquiryForm.value,
-        _cc: 'admissionsdhanwantari@gmail.com',
+        _cc: 'judithwellcare@gmail.com',
         _subject: `New Enquiry: ${this.enquiryForm.value.name} - ${this.enquiryForm.value.course}`,
         _template: 'table',
         _captcha: 'false'
       };
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/judithwellcare@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/admissionsdhanwantari@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -67,8 +67,7 @@ export class EnquiryFormComponent implements OnInit {
           this.submitted = true;
           this.enquiryForm.reset({ course: this.preSelectedCourse });
         } else {
-          console.error('Form submission failed');
-          alert('Something went wrong. Please try again or call us directly.');
+          throw new Error('Submission failed');
         }
       } catch (error) {
         console.error('Error submitting form:', error);
